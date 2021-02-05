@@ -20,7 +20,7 @@ public class ConnectionFactory {
     
     public Connection getConexao(){
         try{
-            return DriverManager.getConnection("jdbc:mysql://"+this.host+"/"+this.db, this.user, this.password);
+           return DriverManager.getConnection("jdbc:mysql://"+this.host+"/"+this.db, this.user, this.password);
         }catch(Exception erro){
             throw new RuntimeException("erro: "+erro);
         }
