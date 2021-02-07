@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class ProdutoTableModel extends AbstractTableModel {
 
-    private static final int COL_COD_PRODUTO = 0;
-    private static final int COL_DESCRICAO = 1;
-    private static final int COL_PRECO = 2;
-    private ArrayList<Produto> lista;
+    public static final int COL_COD_PRODUTO = 0;
+    public static final int COL_DESCRICAO = 1;
+    public static final int COL_PRECO = 2;
+    public ArrayList<Produto> lista;
     
     
     public ProdutoTableModel(ArrayList<Produto> l){

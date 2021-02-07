@@ -15,7 +15,9 @@ public class ProdutoDAO {
     private ResultSet rst;
     private ArrayList<Produto> lista = new ArrayList<>();
     
-    
+    public ProdutoDAO(){
+        conn = new ConnectionFactory().getConexao();
+    }
     
     public void inserir(Produto produto){
         try{
