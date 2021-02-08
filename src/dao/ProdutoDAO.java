@@ -72,6 +72,24 @@ public class ProdutoDAO {
             return lista;
         }
         
+        public ArrayList<Produto> listarTodosDescricao(String valor){
+                String sql = "SELECT * FROM produto WHERE descricao LIKE '%"+valor+"%' ";
+            try{
+                stm = conn.createStatement();
+                rst = stm.executeQuery(sql);
+                           while(rst.next()){
+                           Produto produto = new Produto();
+                            produto.setCod_produto(rst.getInt("cod_produto"));
+                            produto.setDescricao(rst.getString("descricao"));
+                            produto.setPreco(rst.getDouble("preco"));
+                            lista.add(produto);
+                    }
+            }catch(Exception erro){
+                throw new RuntimeException("erro 5:"+erro);
+            }
+            return lista;
+        }
+        
     }
     
 

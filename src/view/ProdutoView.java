@@ -118,6 +118,11 @@ public class ProdutoView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbProduto);
 
         tfdBuscaDescricao.setBackground(new java.awt.Color(255, 255, 255));
+        tfdBuscaDescricao.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfdBuscaDescricaoKeyPressed(evt);
+            }
+        });
 
         jLabel4.setText(" Pesquisar (Descrição)");
 
@@ -145,9 +150,8 @@ public class ProdutoView extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(24, 24, 24)
                                     .addComponent(jLabel3))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
@@ -256,6 +260,11 @@ public class ProdutoView extends javax.swing.JFrame {
      
 
     }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void tfdBuscaDescricaoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdBuscaDescricaoKeyPressed
+        String pesquisa = tfdBuscaDescricao.getText();
+        tbProduto.setModel(new ProdutoTableModel(new ProdutoDAO().listarTodosDescricao(pesquisa)));
+    }//GEN-LAST:event_tfdBuscaDescricaoKeyPressed
         
    
    
